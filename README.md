@@ -1,6 +1,7 @@
 Welcome to my Website!
-Darrin Kenneth (Ken) Howard
+
 You can reach me via email at darrinkhoward@ucsb.edu
+
 connect with me on LinkedIn! https://www.linkedin.com/in/ken-howard11/
 
 Current Projects:
@@ -17,4 +18,8 @@ Current Projects:
 3. Air BnB guidebook website
    Starting with the family owned rental in St. Louis, digitizing guidebooks for patrons creates
    ease of access and remote access to information about passwords and where key items are stored.
-   
+
+Portfolio of Previous Work:
+
+Projects in Linguistics (computational, corpus)
+

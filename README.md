@@ -1,4 +1,4 @@
-Welcome to my Website!
+Hello World!
 
 You can reach me via email at darrinkhoward@ucsb.edu
 

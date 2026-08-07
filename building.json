@@ -1,0 +1,162 @@
+{
+  "schema": "parametric-study.building.v2",
+  "id": "building-a",
+  "name": "Multifamily Student Housing",
+  "container": "parametric study",
+  "truth": "unresolved",
+  "_comment": "Seven levels, each assigned an explicit floor-plan variant. The split between levels 1-2 and levels 3-7 is the one piece of level structure the available set states outright; it appears twice in the detail references and once as a difference in stated ceiling height. Everything spatial - plate outlines, corridor and core positions, unit counts and unit positions - is a study arrangement and is marked unresolved wherever it is shown.",
+  "levelStructure": {
+    "truth": "derived",
+    "note": "Levels 1-2 and levels 3-7 are treated as two regimes because the set partitions them that way. Which of levels 3-7 are identical is not stated, so levels with no evidence repeat one plate and say so."
+  },
+  "levels": [
+    {
+      "id": "floor-01",
+      "level": 1,
+      "name": "Level 01",
+      "role": "Entry level",
+      "variant": "variant-entry",
+      "elevation": {
+        "value": 0.0,
+        "unit": "m",
+        "truth": "derived",
+        "note": "Stacked from floor-to-floor figures that are themselves derived from stated ceiling heights. No elevation is given in the available set."
+      },
+      "floorToFloor": {
+        "value": 3.3528,
+        "unit": "m",
+        "truth": "derived",
+        "note": "Ceiling height is stated; structural depth is assumed to reach floor-to-floor."
+      }
+    },
+    {
+      "id": "floor-02",
+      "level": 2,
+      "name": "Level 02",
+      "role": "Podium level",
+      "variant": "variant-podium-mixed",
+      "elevation": {
+        "value": 3.3528,
+        "unit": "m",
+        "truth": "derived",
+        "note": "Stacked from floor-to-floor figures that are themselves derived from stated ceiling heights. No elevation is given in the available set."
+      },
+      "floorToFloor": {
+        "value": 3.048,
+        "unit": "m",
+        "truth": "derived",
+        "note": "Ceiling height is stated; structural depth is assumed to reach floor-to-floor."
+      }
+    },
+    {
+      "id": "floor-03",
+      "level": 3,
+      "name": "Level 03",
+      "role": "Residential",
+      "variant": "variant-residential-a",
+      "elevation": {
+        "value": 6.4008,
+        "unit": "m",
+        "truth": "derived",
+        "note": "Stacked from floor-to-floor figures that are themselves derived from stated ceiling heights. No elevation is given in the available set."
+      },
+      "floorToFloor": {
+        "value": 3.048,
+        "unit": "m",
+        "truth": "derived",
+        "note": "Ceiling height is stated; structural depth is assumed to reach floor-to-floor."
+      }
+    },
+    {
+      "id": "floor-04",
+      "level": 4,
+      "name": "Level 04",
+      "role": "Residential",
+      "variant": "variant-residential-b",
+      "elevation": {
+        "value": 9.4488,
+        "unit": "m",
+        "truth": "derived",
+        "note": "Stacked from floor-to-floor figures that are themselves derived from stated ceiling heights. No elevation is given in the available set."
+      },
+      "floorToFloor": {
+        "value": 3.048,
+        "unit": "m",
+        "truth": "derived",
+        "note": "Ceiling height is stated; structural depth is assumed to reach floor-to-floor."
+      }
+    },
+    {
+      "id": "floor-05",
+      "level": 5,
+      "name": "Level 05",
+      "role": "Residential",
+      "variant": "variant-residential-a",
+      "elevation": {
+        "value": 12.4968,
+        "unit": "m",
+        "truth": "derived",
+        "note": "Stacked from floor-to-floor figures that are themselves derived from stated ceiling heights. No elevation is given in the available set."
+      },
+      "floorToFloor": {
+        "value": 3.048,
+        "unit": "m",
+        "truth": "derived",
+        "note": "Ceiling height is stated; structural depth is assumed to reach floor-to-floor."
+      }
+    },
+    {
+      "id": "floor-06",
+      "level": 6,
+      "name": "Level 06",
+      "role": "Residential",
+      "variant": "variant-residential-a",
+      "elevation": {
+        "value": 15.5448,
+        "unit": "m",
+        "truth": "derived",
+        "note": "Stacked from floor-to-floor figures that are themselves derived from stated ceiling heights. No elevation is given in the available set."
+      },
+      "floorToFloor": {
+        "value": 3.048,
+        "unit": "m",
+        "truth": "derived",
+        "note": "Ceiling height is stated; structural depth is assumed to reach floor-to-floor."
+      }
+    },
+    {
+      "id": "floor-07",
+      "level": 7,
+      "name": "Level 07",
+      "role": "Residential",
+      "variant": "variant-residential-c",
+      "elevation": {
+        "value": 18.5928,
+        "unit": "m",
+        "truth": "derived",
+        "note": "Stacked from floor-to-floor figures that are themselves derived from stated ceiling heights. No elevation is given in the available set."
+      },
+      "floorToFloor": {
+        "value": 3.048,
+        "unit": "m",
+        "truth": "derived",
+        "note": "Ceiling height is stated; structural depth is assumed to reach floor-to-floor."
+      }
+    }
+  ],
+  "types": {
+    "unit-s1": "types/unit-s1.json",
+    "unit-b1": "types/unit-b1.json",
+    "unit-b2": "types/unit-b2.json",
+    "unit-d1": "types/unit-d1.json",
+    "unit-d1-1": "types/unit-d1-1.json",
+    "unit-d2": "types/unit-d2.json"
+  },
+  "variants": {
+    "variant-residential-a": "levels/variant-residential-a.json",
+    "variant-residential-b": "levels/variant-residential-b.json",
+    "variant-residential-c": "levels/variant-residential-c.json",
+    "variant-entry": "levels/variant-entry.json",
+    "variant-podium-mixed": "levels/variant-podium-mixed.json"
+  }
+}

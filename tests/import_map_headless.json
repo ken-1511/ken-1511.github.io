@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "three": "./three-headless.js",
+    "three/addons/": "../vendor/three/addons/"
+  }
+}

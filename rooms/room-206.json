@@ -1,0 +1,52 @@
+{
+  "schema": "parametric-study.room-definition.v1",
+  "id": "building-a.floor-02.room-206",
+  "name": "Room 206 — no accepted anchor",
+  "shortName": "Room 206",
+  "unit": "Unit Type B2",
+  "truth": "unresolved",
+  "container": "parametric reconstruction study",
+  "source": null,
+  "summary": "No accepted plan anchor exists for this scope. Two volumes are shown because the plan appears to carry a main space and an alcove, but neither extent is verified and the division between them is itself unresolved.",
+  "missing": [
+    "Accepted plan region for the room",
+    "Dimensioned room boundary",
+    "Whether the alcove is a separate scope or part of the main room",
+    "Room designation and use",
+    "Floor elevation"
+  ],
+  "params": {},
+  "displayNames": {
+    "building-a": "Building A",
+    "building-a.floor-02": "Level 02",
+    "building-a.floor-02.room-206": "Room 206"
+  },
+  "parts": [
+    {
+      "type": "volume",
+      "id": "building-a.floor-02.room-206.volume",
+      "name": "Unreconstructed room volume",
+      "geometry": {
+        "width": 2.4384,
+        "height": 2.7432,
+        "depth": 3.6576,
+        "x": 0,
+        "z": 0
+      },
+      "note": "No accepted plan anchor for this scope. Extents are a placeholder at study scale and carry no claim about the building."
+    },
+    {
+      "type": "volume",
+      "id": "building-a.floor-02.room-206.alcove",
+      "name": "Unreconstructed alcove",
+      "geometry": {
+        "width": 1.2192,
+        "height": 2.1336,
+        "depth": 0.9144,
+        "x": 0.3048,
+        "z": 1.3716
+      },
+      "note": "Shown separately only to record that a sub-scope may exist here. Whether it is a distinct room, a closet, or nothing at all is unresolved."
+    }
+  ]
+}

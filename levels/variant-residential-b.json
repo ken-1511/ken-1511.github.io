@@ -1,0 +1,195 @@
+{
+  "schema": "parametric-study.floor-variant.v1",
+  "id": "variant-residential-b",
+  "name": "Residential B \u2014 accessible mix",
+  "role": "residential",
+  "truth": "unresolved",
+  "evidence": {
+    "state": "unresolved",
+    "basis": "This level carries the widest set of unit tags in the available material, including both mobility types. That establishes which types occur on it. It does not establish how many, or where."
+  },
+  "ceilingHeight": {
+    "value": 2.7432,
+    "unit": "m",
+    "truth": "derived",
+    "note": "Ceiling heights are stated for levels 1 and 2. Every other level takes the level 2 figure, which is a derivation, not a statement."
+  },
+  "plate": {
+    "polygon": [
+      [
+        0,
+        0
+      ],
+      [
+        57.912,
+        0
+      ],
+      [
+        57.912,
+        16.0528
+      ],
+      [
+        7.9248,
+        16.0528
+      ],
+      [
+        7.9248,
+        8.9408
+      ],
+      [
+        0,
+        8.9408
+      ]
+    ],
+    "thickness": 0.2032,
+    "truth": "unresolved",
+    "note": "No floor plate is drawn anywhere in the available set. This outline is a study arrangement built from the one dimension that does repeat across every unit sheet \u2014 the 23'-4\" unit depth \u2014 either side of a corridor."
+  },
+  "corridor": {
+    "id": "corridor",
+    "x0": 0,
+    "x1": 57.912,
+    "z0": 7.112,
+    "z1": 8.9408,
+    "truth": "unresolved",
+    "note": "The set names corridors but locates none. Width is a code minimum, not a measured figure."
+  },
+  "units": [
+    {
+      "type": "unit-d1",
+      "transform": {
+        "x": 7.5057,
+        "z": 3.556,
+        "rotation": 0
+      }
+    },
+    {
+      "type": "unit-b1",
+      "transform": {
+        "x": 20.447,
+        "z": 3.556,
+        "rotation": 0
+      }
+    },
+    {
+      "type": "unit-s1",
+      "transform": {
+        "x": 33.9471,
+        "z": 3.556,
+        "rotation": 0
+      }
+    },
+    {
+      "type": "unit-d2",
+      "transform": {
+        "x": 43.6753,
+        "z": 3.556,
+        "rotation": 0
+      }
+    },
+    {
+      "type": "unit-s1",
+      "transform": {
+        "x": 53.4035,
+        "z": 3.556,
+        "rotation": 0
+      }
+    },
+    {
+      "type": "unit-d1-1",
+      "transform": {
+        "x": 15.3543,
+        "z": 12.4968,
+        "rotation": 0
+      }
+    },
+    {
+      "type": "unit-d2",
+      "transform": {
+        "x": 30.2387,
+        "z": 12.4968,
+        "rotation": 0
+      }
+    },
+    {
+      "type": "unit-b1",
+      "transform": {
+        "x": 43.1292,
+        "z": 12.4968,
+        "rotation": 0
+      }
+    },
+    {
+      "type": "unit-s1",
+      "transform": {
+        "x": 50.8381,
+        "z": 12.4968,
+        "rotation": 0
+      }
+    }
+  ],
+  "common": [
+    {
+      "id": "lounge",
+      "roomType": "study",
+      "name": "Study lounge",
+      "x": 54.864,
+      "z": 3.556,
+      "width": 4.8768,
+      "depth": 7.112,
+      "truth": "unresolved",
+      "note": "Assumed."
+    }
+  ],
+  "service": [
+    {
+      "id": "trash",
+      "roomType": "trash",
+      "name": "Trash",
+      "x": 54.2544,
+      "z": 12.4968,
+      "width": 3.6576,
+      "depth": 7.112,
+      "truth": "unresolved",
+      "note": "Assumed."
+    }
+  ],
+  "vertical": [
+    {
+      "id": "stair",
+      "roomType": "stair",
+      "name": "Stair",
+      "x": 9.6012,
+      "z": 3.556,
+      "width": 3.3528,
+      "depth": 7.112,
+      "truth": "unresolved",
+      "note": "The set names shafts, stairs and an elevator but locates none of them. This core is a study placement."
+    },
+    {
+      "id": "elevator",
+      "roomType": "elevator",
+      "name": "Elevator",
+      "x": 12.4968,
+      "z": 2.1336,
+      "width": 2.4384,
+      "depth": 4.2672,
+      "truth": "unresolved",
+      "note": "The set names shafts, stairs and an elevator but locates none of them. This core is a study placement."
+    },
+    {
+      "id": "shaft",
+      "roomType": "shaft",
+      "name": "Shaft",
+      "x": 12.4968,
+      "z": 5.6896,
+      "width": 2.4384,
+      "depth": 2.8448,
+      "truth": "unresolved",
+      "note": "The set names shafts, stairs and an elevator but locates none of them. This core is a study placement."
+    }
+  ],
+  "notes": [
+    "Unit tags in the set place studio, two-bedroom, four-bedroom and both mobility types on this level. The mix shown is drawn from those tags; the count and the arrangement are not stated anywhere."
+  ]
+}

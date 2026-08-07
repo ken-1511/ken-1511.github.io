@@ -1,0 +1,336 @@
+{
+  "schema": "parametric-study.room-definition.v1",
+  "id": "building-a.floor-02.room-204",
+  "name": "Unit B2 — Kitchen L2.0 (Adaptable)",
+  "shortName": "Kitchen L2.0",
+  "unit": "Unit Type B2",
+  "truth": "unresolved",
+  "container": "parametric reconstruction study",
+  "summary": "An accepted plan anchor exists for this kitchen in the private record. It is withheld from publication because the evidence page carries client drawing identity that cannot be published, so this build ships no source link and the scope reads unresolved. The evidence existed and was reviewed — it is simply not shown here, and an unshown source is not a source. The geometry below is unchanged and was always a designer default; the accessibility envelopes remain derived from published code, which is checkable without any drawing.",
+  "source": null,
+  "_dimensioning": "Every figure below is a standard millwork or framing dimension expressed in inches and converted to metres, chosen as a mutually compatible set. The critical pairing is the 34 in finished surface against the 6 1/2 in bowl: it yields exactly 27.5 in of knee clearance against a 27 in requirement, a half-inch margin. 34 in is the finished top surface — the plane 2010 ADA 606.3 measures — not the cabinet carcass, so the counter slab is inside the 34 in, not stacked on top of it. The 132 in run divides into four 24 in base modules around a 36 in sink void with no remainder. Parametric controls are removed for this pass.",
+  "dimensions": {
+    "note": "Dimensions are pinned, not parametric. The sink margins here are half an inch; sliders return later as viewing adjustments, once this governing set is agreed.",
+    "fixed": [
+      {
+        "label": "Room envelope",
+        "governing": "18'-0\" × 11'-0\" × 9'-0\"",
+        "metric": "5.486 × 3.353 × 2.743 m",
+        "note": "Designer default. No dimensioned room boundary is published."
+      },
+      {
+        "label": "Wall thickness",
+        "governing": "4 1/2 in",
+        "metric": "0.114 m",
+        "note": "Nominal 2×4 partition with two gypsum layers."
+      },
+      {
+        "label": "Casework run",
+        "governing": "11'-0\" · 132 in",
+        "metric": "3.353 m",
+        "note": "Four 24 in base modules around a 36 in sink void, no remainder."
+      },
+      {
+        "label": "Finished work surface",
+        "governing": "34 in AFF",
+        "metric": "0.864 m",
+        "note": "Top of the counter — the plane 606.3 governs. The 1 1/2 in slab sits inside this figure, not on top of it."
+      },
+      {
+        "label": "Cabinet carcass",
+        "governing": "32 1/2 in",
+        "metric": "0.826 m",
+        "note": "34 in finished surface less the 1 1/2 in countertop."
+      },
+      {
+        "label": "Base cabinet module",
+        "governing": "24 in wide × 24 in deep",
+        "metric": "0.610 × 0.610 m",
+        "note": "Standard base cabinet."
+      },
+      {
+        "label": "Countertop",
+        "governing": "25 in deep × 1 1/2 in thick",
+        "metric": "0.635 × 0.038 m",
+        "note": "24 in cabinet with a nominal front overhang."
+      },
+      {
+        "label": "Toe kick",
+        "governing": "4 in high",
+        "metric": "0.102 m",
+        "note": "Millwork toe kick. Distinct from the 9 in ADA toe clearance envelope."
+      },
+      {
+        "label": "Sink void",
+        "governing": "36 in wide",
+        "metric": "0.914 m",
+        "note": "Base cabinet omitted. Exceeds the 30 in knee width minimum by 6 in."
+      },
+      {
+        "label": "Sink bowl",
+        "governing": "6 1/2 in deep",
+        "metric": "0.165 m",
+        "note": "UFAS 4.34.6.5 maximum. Underside lands at 27.5 in — 0.5 in over the requirement."
+      },
+      {
+        "label": "Knee envelope",
+        "governing": "30 in wide × 19 in deep × 9–27 in AFF",
+        "metric": "0.914 × 0.483 m",
+        "note": "19 in is the UFAS kitchen-sink figure, well over ADA 306.3's 11 in floor."
+      },
+      {
+        "label": "Toe envelope",
+        "governing": "17 in deep × 9 in high",
+        "metric": "0.432 × 0.229 m",
+        "note": "2010 ADA 306.2.3 minimum where it forms part of the clear floor space."
+      },
+      {
+        "label": "Upper cabinet",
+        "governing": "30 in high × 12 in deep",
+        "metric": "0.762 m high",
+        "note": "Standard wall cabinet. Omitted over the sink."
+      },
+      {
+        "label": "Upper cabinet underside",
+        "governing": "52 in AFF",
+        "metric": "1.321 m",
+        "note": "18 in above the 34 in work surface."
+      }
+    ]
+  },
+  "displayNames": {
+    "building-a": "Building A",
+    "building-a.floor-02": "Level 02",
+    "building-a.floor-02.room-204": "Unit B2 — Kitchen L2.0"
+  },
+  "parts": [
+    {
+      "type": "slab",
+      "id": "building-a.floor-02.room-204.slab",
+      "name": "Room slab",
+      "truth": "designer-default",
+      "geometry": {
+        "width": 5.4864,
+        "depth": 3.3528,
+        "thickness": 0.1524,
+        "x": 0,
+        "z": 0
+      },
+      "derivations": [
+        "Footprint is a study envelope at 18'-0\" × 11'-0\". No dimensioned room boundary has been accepted."
+      ]
+    },
+    {
+      "type": "wall",
+      "id": "building-a.floor-02.room-204.wall-north",
+      "name": "North wall",
+      "truth": "designer-default",
+      "geometry": {
+        "length": 5.4864,
+        "height": 2.7432,
+        "thickness": 0.1143,
+        "x": 0,
+        "z": -1.6764,
+        "rotation": 0
+      },
+      "note": "Wall position is a designer default. Nothing in this build fixes the partition layout."
+    },
+    {
+      "type": "wall",
+      "id": "building-a.floor-02.room-204.wall-west",
+      "name": "West wall",
+      "truth": "designer-default",
+      "geometry": {
+        "length": 3.3528,
+        "height": 2.7432,
+        "thickness": 0.1143,
+        "x": -2.7432,
+        "z": 0,
+        "rotation": 90
+      }
+    },
+    {
+      "type": "wall",
+      "id": "building-a.floor-02.room-204.wall-east",
+      "name": "East partition (open to living)",
+      "truth": "designer-default",
+      "style": "ghost",
+      "geometry": {
+        "length": 3.3528,
+        "height": 2.7432,
+        "thickness": 0.1016,
+        "x": 2.7432,
+        "z": 0,
+        "rotation": 90
+      },
+      "note": "Drawn as a ghost because the boundary between the kitchen and the living zone is not resolved."
+    },
+    {
+      "type": "wall",
+      "id": "building-a.floor-02.room-204.wall-south-west",
+      "name": "South wall (west segment)",
+      "truth": "designer-default",
+      "geometry": {
+        "length": 3.2004,
+        "height": 2.7432,
+        "thickness": 0.1143,
+        "x": -1.143,
+        "z": 1.6764,
+        "rotation": 0
+      }
+    },
+    {
+      "type": "wall",
+      "id": "building-a.floor-02.room-204.wall-south-east",
+      "name": "South wall (east segment)",
+      "truth": "designer-default",
+      "geometry": {
+        "length": 1.3716,
+        "height": 2.7432,
+        "thickness": 0.1143,
+        "x": 2.0574,
+        "z": 1.6764,
+        "rotation": 0
+      }
+    },
+    {
+      "type": "opening",
+      "id": "building-a.floor-02.room-204.opening-entry",
+      "name": "Entry opening",
+      "truth": "designer-default",
+      "geometry": {
+        "width": 0.9144,
+        "height": 2.032,
+        "thickness": 0.1143,
+        "x": 0.9144,
+        "z": 1.6764,
+        "sill": 0,
+        "rotation": 0
+      },
+      "note": "Standard 3'-0\" × 6'-8\" cased opening between the south wall segments. Position is a placeholder."
+    },
+    {
+      "type": "opening",
+      "id": "building-a.floor-02.room-204.window-north",
+      "name": "Window over sink",
+      "truth": "designer-default",
+      "style": "glazed",
+      "geometry": {
+        "width": 0.9144,
+        "height": 0.9144,
+        "thickness": 0.08,
+        "x": -0.6096,
+        "z": -1.7,
+        "sill": 1.1176,
+        "rotation": 0
+      },
+      "note": "3'-0\" × 3'-0\" at 44 in sill, sized and placed to the sink void so it never collides with an upper cabinet. Not taken from evidence."
+    },
+    {
+      "type": "fixture",
+      "id": "building-a.floor-02.room-204.anchor-envelope",
+      "name": "Plan region outline",
+      "truth": "unresolved",
+      "material": "counter",
+      "geometry": {
+        "width": 3.6576,
+        "height": 0.012,
+        "depth": 1.2192,
+        "x": 0,
+        "y": 0.012,
+        "z": -1.0668
+      },
+      "note": "The traced footprint of the plan region the kitchen was anchored to. With the evidence withheld it supports no claim a reader can check, so it is shown as unresolved rather than as verification. It is a review aid, not casework segmentation."
+    },
+    {
+      "type": "casework-run",
+      "id": "building-a.floor-02.room-204.kitchen",
+      "name": "Kitchen L2.0 (Adaptable)",
+      "truth": "unresolved",
+      "anchor": {
+        "x": 0,
+        "z": -1.31445
+      },
+      "params": {
+        "runLength": 3.3528,
+        "workSurfaceHeight": 0.8636
+      },
+      "counterDepth": 0.635,
+      "counterThickness": 0.0381,
+      "cabinetDepth": 0.6096,
+      "toeHeight": 0.1016,
+      "moduleTarget": 0.6096,
+      "upperHeight": 0.762,
+      "upperBottom": 1.3208,
+      "sink": {
+        "offset": -0.6096,
+        "width": 0.9144,
+        "bowlDepth": 0.1651,
+        "kneeDepth": 0.4826,
+        "toeDepth": 0.4318
+      },
+      "note": "The accepted anchor establishing this kitchen sits in the private record and is not published, so this assembly makes no source claim here. Its geometry was always a designer default; the sink clearances remain derived from published ADA and UFAS figures.",
+      "appliances": [
+        {
+          "slug": "refrigerator",
+          "name": "Refrigerator",
+          "truth": "designer-default",
+          "geometry": {
+            "width": 0.9144,
+            "height": 1.778,
+            "depth": 0.762,
+            "x": "run-end",
+            "dz": 0.0762
+          },
+          "note": "Standard 36 in × 30 in × 70 in placeholder. Anchored to the end of the run, so the relationship survives if the run is re-dimensioned."
+        },
+        {
+          "slug": "range",
+          "name": "Range",
+          "truth": "designer-default",
+          "geometry": {
+            "width": 0.6096,
+            "depth": 0.635,
+            "x": 0.762,
+            "dz": 0.0127
+          },
+          "note": "Standard 24 in apartment range occupying one base module. Height is taken from the work surface, so its top stays flush with the counter."
+        }
+      ]
+    },
+    {
+      "type": "fixture",
+      "id": "building-a.floor-02.room-204.work-counter",
+      "name": "Accessible work counter",
+      "truth": "designer-default",
+      "material": "counter",
+      "geometry": {
+        "width": 1.8288,
+        "height": 0.8636,
+        "depth": 0.762,
+        "x": -1.2192,
+        "y": 0.4318,
+        "z": 0.6096,
+        "rotation": 0
+      },
+      "derivations": [
+        "2010 ADA 606.3 · 804.3 — 34 in max AFF",
+        "2010 ADA 804.2.1 — 46 in aisle to the casework run, against a 40 in minimum"
+      ],
+      "note": "A 6'-0\" × 2'-6\" second work surface at the governing 34 in maximum. Its existence and position are designer defaults; its height and the aisle it leaves are code-derived."
+    }
+  ],
+  "withheld": {
+    "state": "evidence exists, withheld from publication",
+    "reason": "The evidence raster carries client drawing identity and was withdrawn from the live site. The public build ships no raster.",
+    "held_in": "Private snapshot only. Not in this tree, not in this build.",
+    "effect": "No published source link, so the scope cannot claim source-verified and does not."
+  },
+  "missing": [
+    "A publishable source link for the kitchen plan region",
+    "Dimensioned room boundary",
+    "Verified casework dimensions and subdivisions",
+    "Floor elevation",
+    "Room-to-unit placement"
+  ]
+}

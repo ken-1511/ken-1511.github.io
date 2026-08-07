@@ -1,0 +1,33 @@
+{
+  "schema": "parametric-study.room-definition.v1",
+  "id": "building-a.floor-02.room-205",
+  "name": "Room 205 — no accepted anchor",
+  "shortName": "Room 205",
+  "unit": "Unit Type B2",
+  "truth": "unresolved",
+  "container": "parametric reconstruction study",
+  "source": null,
+  "summary": "No accepted plan anchor exists for this scope. The footprint below is a labelled gap, not a reconstruction: it marks that a room is here and that we do not know what is in it. Nothing in this room may be cited, measured, or promoted.",
+  "missing": [
+    "Accepted plan region for the room",
+    "Dimensioned room boundary",
+    "Room designation and use",
+    "Floor elevation",
+    "Any casework, fixture or opening evidence"
+  ],
+  "params": {},
+  "displayNames": {
+    "building-a": "Building A",
+    "building-a.floor-02": "Level 02",
+    "building-a.floor-02.room-205": "Room 205"
+  },
+  "parts": [
+    {
+      "type": "volume",
+      "id": "building-a.floor-02.room-205.volume",
+      "name": "Unreconstructed room volume",
+      "geometry": { "width": 3.048, "height": 2.7432, "depth": 3.6576, "x": 0, "z": 0 },
+      "note": "No accepted plan anchor for this scope. Extents are a placeholder at study scale and carry no claim about the building."
+    }
+  ]
+}

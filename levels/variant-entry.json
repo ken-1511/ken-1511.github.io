@@ -1,0 +1,168 @@
+{
+  "schema": "parametric-study.floor-variant.v1",
+  "id": "variant-entry",
+  "name": "Entry level",
+  "role": "entry",
+  "truth": "unresolved",
+  "evidence": {
+    "state": "derived",
+    "basis": "Two things about level 1 are stated in the set: its units have a 10'-0\" ceiling where level 2 has 9'-0\", and it sits in a detail regime shared only with level 2, over a podium. A taller, differently-occupied ground level follows from that. What occupies it does not."
+  },
+  "ceilingHeight": {
+    "value": 3.048,
+    "unit": "m",
+    "truth": "derived",
+    "note": "Ceiling heights are stated for levels 1 and 2. Every other level takes the level 2 figure, which is a derivation, not a statement."
+  },
+  "plate": {
+    "polygon": [
+      [
+        -4.2672,
+        -4.2672
+      ],
+      [
+        62.1792,
+        -4.2672
+      ],
+      [
+        62.1792,
+        20.32
+      ],
+      [
+        -4.2672,
+        20.32
+      ]
+    ],
+    "thickness": 0.2032,
+    "truth": "unresolved",
+    "note": "No floor plate is drawn anywhere in the available set. This outline is a study arrangement built from the one dimension that does repeat across every unit sheet \u2014 the 23'-4\" unit depth \u2014 either side of a corridor."
+  },
+  "corridor": {
+    "id": "corridor",
+    "x0": -3.048,
+    "x1": 60.96,
+    "z0": 7.112,
+    "z1": 8.9408,
+    "truth": "unresolved",
+    "note": "The set names corridors but locates none. Width is a code minimum, not a measured figure."
+  },
+  "units": [
+    {
+      "type": "unit-s1",
+      "transform": {
+        "x": 47.9933,
+        "z": 3.556,
+        "rotation": 0
+      }
+    }
+  ],
+  "common": [
+    {
+      "id": "lobby",
+      "roomType": "lobby",
+      "name": "Lobby",
+      "x": 12.192,
+      "z": 2.032,
+      "width": 12.192,
+      "depth": 10.16,
+      "truth": "unresolved",
+      "note": "The set states a podium and a taller level 1 but schedules no entry sequence. Assumed."
+    },
+    {
+      "id": "mail",
+      "roomType": "mail",
+      "name": "Mail",
+      "x": 20.7264,
+      "z": 0.0,
+      "width": 4.8768,
+      "depth": 6.096,
+      "truth": "unresolved",
+      "note": "Assumed."
+    },
+    {
+      "id": "study-lounge",
+      "roomType": "study",
+      "name": "Study lounge",
+      "x": 28.3464,
+      "z": 2.032,
+      "width": 10.3632,
+      "depth": 10.16,
+      "truth": "unresolved",
+      "note": "Assumed."
+    }
+  ],
+  "service": [
+    {
+      "id": "bike",
+      "roomType": "bike",
+      "name": "Bike store",
+      "x": 1.524,
+      "z": 2.032,
+      "width": 9.144,
+      "depth": 10.16,
+      "truth": "unresolved",
+      "note": "Assumed."
+    },
+    {
+      "id": "trash",
+      "roomType": "trash",
+      "name": "Trash",
+      "x": 35.9664,
+      "z": 2.032,
+      "width": 4.8768,
+      "depth": 10.16,
+      "truth": "unresolved",
+      "note": "Assumed."
+    },
+    {
+      "id": "mechanical",
+      "roomType": "mechanical",
+      "name": "Mechanical",
+      "x": 42.0624,
+      "z": 2.032,
+      "width": 7.3152,
+      "depth": 10.16,
+      "truth": "unresolved",
+      "note": "Assumed."
+    }
+  ],
+  "vertical": [
+    {
+      "id": "stair",
+      "roomType": "stair",
+      "name": "Stair",
+      "x": 9.6012,
+      "z": 3.556,
+      "width": 3.3528,
+      "depth": 7.112,
+      "truth": "unresolved",
+      "note": "The set names shafts, stairs and an elevator but locates none of them. This core is a study placement."
+    },
+    {
+      "id": "elevator",
+      "roomType": "elevator",
+      "name": "Elevator",
+      "x": 12.4968,
+      "z": 2.1336,
+      "width": 2.4384,
+      "depth": 4.2672,
+      "truth": "unresolved",
+      "note": "The set names shafts, stairs and an elevator but locates none of them. This core is a study placement."
+    },
+    {
+      "id": "shaft",
+      "roomType": "shaft",
+      "name": "Shaft",
+      "x": 12.4968,
+      "z": 5.6896,
+      "width": 2.4384,
+      "depth": 2.8448,
+      "truth": "unresolved",
+      "note": "The set names shafts, stairs and an elevator but locates none of them. This core is a study placement."
+    }
+  ],
+  "notes": [
+    "The role of this level is derived from a stated ceiling height and a stated podium. The rooms shown are an assumed entry programme.",
+    "One mobility studio is tagged on this level in the available set, so a dwelling unit is placed here; its position is not established."
+  ]
+}

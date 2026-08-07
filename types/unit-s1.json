@@ -1,0 +1,212 @@
+{
+  "schema": "parametric-study.unit-type.v1",
+  "id": "unit-s1",
+  "name": "Studio \u2014 Type S1",
+  "shortName": "Studio S1",
+  "unit": "Studio \u2014 Type S1",
+  "truth": "unresolved",
+  "container": "parametric study",
+  "summary": "Studio unit type. Overall dimensions are measured off the unit plan sheet; the arrangement of rooms within it is a study arrangement and carries no claim.",
+  "source": null,
+  "bedrooms": 0,
+  "accessibility": "adaptable",
+  "footprint": {
+    "width": 4.5466,
+    "depth": 7.112,
+    "polygon": [
+      [
+        -2.2733,
+        -3.556
+      ],
+      [
+        2.2733,
+        -3.556
+      ],
+      [
+        2.2733,
+        3.556
+      ],
+      [
+        -2.2733,
+        3.556
+      ]
+    ],
+    "truth": "designer-default",
+    "note": "Overall dimensions are measured off the unit plan sheet. The sheet itself is withheld, so no source link is published and the type carries no verified claim."
+  },
+  "massing": {
+    "width": 4.5466,
+    "height": 2.7432,
+    "depth": 7.112,
+    "x": 0,
+    "z": 0,
+    "polygon": [
+      [
+        -2.2733,
+        -3.556
+      ],
+      [
+        2.2733,
+        -3.556
+      ],
+      [
+        2.2733,
+        3.556
+      ],
+      [
+        -2.2733,
+        3.556
+      ]
+    ],
+    "truth": "designer-default",
+    "note": "Coarse stand-in drawn when this unit's level is not loaded."
+  },
+  "dimensions": null,
+  "params": null,
+  "displayNames": {},
+  "parts": [
+    {
+      "type": "plate",
+      "id": "slab",
+      "name": "Unit slab",
+      "truth": "designer-default",
+      "layer": "structure",
+      "geometry": {
+        "polygon": [
+          [
+            -2.2733,
+            -3.556
+          ],
+          [
+            2.2733,
+            -3.556
+          ],
+          [
+            2.2733,
+            3.556
+          ],
+          [
+            -2.2733,
+            3.556
+          ]
+        ],
+        "thickness": 0.1524,
+        "y": 0
+      },
+      "note": "Study slab at the unit's measured overall extent."
+    },
+    {
+      "type": "wall",
+      "id": "wall-01",
+      "name": "Perimeter wall 1",
+      "truth": "designer-default",
+      "layer": "shell",
+      "geometry": {
+        "x": 0.0,
+        "z": -3.556,
+        "length": 4.5466,
+        "height": 2.7432,
+        "thickness": 0.1143,
+        "rotation": 0.0
+      }
+    },
+    {
+      "type": "wall",
+      "id": "wall-02",
+      "name": "Perimeter wall 2",
+      "truth": "designer-default",
+      "layer": "shell",
+      "geometry": {
+        "x": 2.2733,
+        "z": 0.0,
+        "length": 7.112,
+        "height": 2.7432,
+        "thickness": 0.1143,
+        "rotation": 90.0
+      }
+    },
+    {
+      "type": "wall",
+      "id": "wall-03",
+      "name": "Perimeter wall 3",
+      "truth": "designer-default",
+      "layer": "shell",
+      "geometry": {
+        "x": 0.0,
+        "z": 3.556,
+        "length": 4.5466,
+        "height": 2.7432,
+        "thickness": 0.1143,
+        "rotation": 180.0
+      }
+    },
+    {
+      "type": "wall",
+      "id": "wall-04",
+      "name": "Perimeter wall 4",
+      "truth": "designer-default",
+      "layer": "shell",
+      "geometry": {
+        "x": -2.2733,
+        "z": 0.0,
+        "length": 7.112,
+        "height": 2.7432,
+        "thickness": 0.1143,
+        "rotation": -90.0
+      }
+    },
+    {
+      "type": "zone",
+      "id": "zone-bath",
+      "name": "Bath",
+      "roomType": "bath",
+      "truth": "designer-default",
+      "layer": "zones",
+      "geometry": {
+        "x": -1.4351,
+        "z": -2.3368,
+        "width": 1.6764,
+        "depth": 2.4384,
+        "y": 0.0127
+      },
+      "note": "Room extents are a study arrangement. The set establishes that this room exists in this unit type and the unit's overall dimensions; it does not dimension the room within the unit."
+    },
+    {
+      "type": "zone",
+      "id": "zone-kitchen",
+      "name": "Kitchen",
+      "roomType": "kitchen",
+      "truth": "designer-default",
+      "layer": "zones",
+      "geometry": {
+        "x": 0.8382,
+        "z": -2.3368,
+        "width": 2.8702,
+        "depth": 2.4384,
+        "y": 0.0127
+      },
+      "note": "Room extents are a study arrangement. The set establishes that this room exists in this unit type and the unit's overall dimensions; it does not dimension the room within the unit."
+    },
+    {
+      "type": "zone",
+      "id": "zone-sleeping",
+      "name": "Sleeping",
+      "roomType": "sleeping",
+      "truth": "designer-default",
+      "layer": "zones",
+      "geometry": {
+        "x": 0.0,
+        "z": 1.2192,
+        "width": 4.5466,
+        "depth": 4.6736,
+        "y": 0.0127
+      },
+      "note": "Room extents are a study arrangement. The set establishes that this room exists in this unit type and the unit's overall dimensions; it does not dimension the room within the unit."
+    }
+  ],
+  "missing": [
+    "A publishable source link for the unit plan",
+    "Dimensioned room boundaries within the unit",
+    "Where this unit sits on any floor plate"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "schema": "parametric-study.room-manifest.v1",
+  "project": "Multifamily Student Housing",
+  "container": "parametric reconstruction study",
+  "building": "building.json",
+  "default": "building-a.floor-04",
+  "displayNames": {
+    "building-a": "Building A",
+    "building-a.floor-01": "Level 01",
+    "building-a.floor-02": "Level 02",
+    "building-a.floor-03": "Level 03",
+    "building-a.floor-04": "Level 04",
+    "building-a.floor-05": "Level 05",
+    "building-a.floor-06": "Level 06",
+    "building-a.floor-07": "Level 07"
+  },
+  "_layers": "Labels for the visibility layers. The viewer discovers which layers a build actually contains from the part specs; this only names them. A layer present in the model with no label here still gets a toggle, under its own name.",
+  "layers": {
+    "structure": "Floor plates and slabs",
+    "shell": "Walls and openings",
+    "zones": "Room zones",
+    "circulation": "Corridors",
+    "common": "Shared rooms",
+    "service": "Service rooms",
+    "vertical": "Stairs, lift and shafts",
+    "casework": "Casework",
+    "fixtures": "Fixtures and appliances",
+    "volumes": "Unresolved volumes",
+    "guides": "Clearance envelopes",
+    "massing": "Massing, levels not loaded"
+  },
+  "rooms": [
+    {
+      "id": "building-a.floor-02.room-204",
+      "floor": "building-a.floor-02",
+      "file": "rooms/room-204.json",
+      "name": "Unit B2 — Kitchen L2.0 (Adaptable)",
+      "shortName": "Kitchen L2.0",
+      "truth": "unresolved",
+      "sourceRef": null,
+      "sourceLabel": null,
+      "order": 1
+    },
+    {
+      "id": "building-a.floor-02.room-205",
+      "floor": "building-a.floor-02",
+      "file": "rooms/room-205.json",
+      "name": "Room 205 — no accepted anchor",
+      "shortName": "Room 205",
+      "truth": "unresolved",
+      "sourceRef": null,
+      "sourceLabel": null,
+      "order": 2
+    },
+    {
+      "id": "building-a.floor-02.room-206",
+      "floor": "building-a.floor-02",
+      "file": "rooms/room-206.json",
+      "name": "Room 206 — no accepted anchor",
+      "shortName": "Room 206",
+      "truth": "unresolved",
+      "sourceRef": null,
+      "sourceLabel": null,
+      "order": 3
+    }
+  ],
+  "evidence": {
+    "published": false,
+    "note": "The public build ships no evidence raster. Source links are withheld, so no scope claims source-verified."
+  }
+}

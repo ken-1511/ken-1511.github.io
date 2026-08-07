@@ -1,0 +1,19 @@
+# Working briefs and the provenance mapping. These carry the de-identification
+# mapping table — opaque published refs back to the client's drawing-set
+# numbering — and the inventory of identifiers legible in the withdrawn raster.
+# Publishing any of them would defeat the entire de-identification exercise.
+# Must never reach a public remote.
+PROVENANCE.md
+BRIEF.md
+BRIEF-ADDENDUM.md
+BRIEF-fullbleed.md
+BRIEF-demote.md
+
+# Denied-terms list and approval manifests. Never committed, never deployed.
+.publication/
+
+# Development-only plan inventory. Records the source set story by story,
+# including sheet numbers, project identity and architect identity, so that the
+# public build can be checked against real evidence without carrying any of it.
+# Never committed, never deployed.
+PLAN-INVENTORY.md

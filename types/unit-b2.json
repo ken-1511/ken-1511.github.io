@@ -1,0 +1,447 @@
+{
+  "schema": "parametric-study.unit-type.v1",
+  "id": "unit-b2",
+  "name": "Two bedroom \u2014 Type B2",
+  "shortName": "Unit B2",
+  "unit": "Two bedroom \u2014 Type B2",
+  "truth": "unresolved",
+  "container": "parametric study",
+  "summary": "An accepted plan anchor exists for this kitchen in the private record. It is withheld from publication because the evidence page carries client drawing identity that cannot be published, so this build ships no source link and the scope reads unresolved. The evidence existed and was reviewed \u2014 it is simply not shown here, and an unshown source is not a source. The geometry below is unchanged and was always a designer default; the accessibility envelopes remain derived from published code, which is checkable without any drawing.",
+  "source": null,
+  "bedrooms": 2,
+  "accessibility": "adaptable",
+  "footprint": {
+    "width": 10.2997,
+    "depth": 7.112,
+    "polygon": [
+      [
+        -5.14985,
+        -3.556
+      ],
+      [
+        5.14985,
+        -3.556
+      ],
+      [
+        5.14985,
+        3.556
+      ],
+      [
+        -5.14985,
+        3.556
+      ]
+    ],
+    "truth": "designer-default",
+    "note": "Overall dimensions are measured off the unit plan sheet. The sheet itself is withheld, so no source link is published and the type carries no verified claim."
+  },
+  "massing": {
+    "width": 10.2997,
+    "height": 2.7432,
+    "depth": 7.112,
+    "x": 0,
+    "z": 0,
+    "polygon": [
+      [
+        -5.14985,
+        -3.556
+      ],
+      [
+        5.14985,
+        -3.556
+      ],
+      [
+        5.14985,
+        3.556
+      ],
+      [
+        -5.14985,
+        3.556
+      ]
+    ],
+    "truth": "designer-default",
+    "note": "Coarse stand-in drawn when this unit's level is not loaded."
+  },
+  "dimensions": {
+    "note": "Dimensions are pinned, not parametric. The sink margins here are half an inch; sliders return later as viewing adjustments, once this governing set is agreed.",
+    "fixed": [
+      {
+        "label": "Unit envelope",
+        "governing": "33'-9 1/2\" \u00d7 23'-4\"",
+        "metric": "10.300 \u00d7 7.112 m",
+        "note": "Measured off the unit plan sheet. The 23'-4\" depth is the one dimension that repeats across every unit type in the set."
+      },
+      {
+        "label": "Kitchen zone",
+        "governing": "15'-0\" \u00d7 9'-0\"",
+        "metric": "4.572 \u00d7 2.743 m",
+        "note": "Designer default. The sheet places a kitchen in this unit but does not dimension the room around the casework."
+      },
+      {
+        "label": "Wall thickness",
+        "governing": "4 1/2 in",
+        "metric": "0.114 m",
+        "note": "Nominal 2\u00d74 partition with two gypsum layers."
+      },
+      {
+        "label": "Casework run",
+        "governing": "11'-0\" \u00b7 132 in",
+        "metric": "3.353 m",
+        "note": "Four 24 in base modules around a 36 in sink void, no remainder."
+      },
+      {
+        "label": "Finished work surface",
+        "governing": "34 in AFF",
+        "metric": "0.864 m",
+        "note": "Top of the counter \u2014 the plane 606.3 governs. The 1 1/2 in slab sits inside this figure, not on top of it."
+      },
+      {
+        "label": "Cabinet carcass",
+        "governing": "32 1/2 in",
+        "metric": "0.826 m",
+        "note": "34 in finished surface less the 1 1/2 in countertop."
+      },
+      {
+        "label": "Base cabinet module",
+        "governing": "24 in wide \u00d7 24 in deep",
+        "metric": "0.610 \u00d7 0.610 m",
+        "note": "Standard base cabinet."
+      },
+      {
+        "label": "Countertop",
+        "governing": "25 in deep \u00d7 1 1/2 in thick",
+        "metric": "0.635 \u00d7 0.038 m",
+        "note": "24 in cabinet with a nominal front overhang."
+      },
+      {
+        "label": "Toe kick",
+        "governing": "4 in high",
+        "metric": "0.102 m",
+        "note": "Millwork toe kick. Distinct from the 9 in ADA toe clearance envelope."
+      },
+      {
+        "label": "Sink void",
+        "governing": "36 in wide",
+        "metric": "0.914 m",
+        "note": "Base cabinet omitted. Exceeds the 30 in knee width minimum by 6 in."
+      },
+      {
+        "label": "Sink bowl",
+        "governing": "6 1/2 in deep",
+        "metric": "0.165 m",
+        "note": "UFAS 4.34.6.5 maximum. Underside lands at 27.5 in \u2014 0.5 in over the requirement."
+      },
+      {
+        "label": "Knee envelope",
+        "governing": "30 in wide \u00d7 19 in deep \u00d7 9\u201327 in AFF",
+        "metric": "0.914 \u00d7 0.483 m",
+        "note": "19 in is the UFAS kitchen-sink figure, well over ADA 306.3's 11 in floor."
+      },
+      {
+        "label": "Toe envelope",
+        "governing": "17 in deep \u00d7 9 in high",
+        "metric": "0.432 \u00d7 0.229 m",
+        "note": "2010 ADA 306.2.3 minimum where it forms part of the clear floor space."
+      },
+      {
+        "label": "Upper cabinet",
+        "governing": "30 in high \u00d7 12 in deep",
+        "metric": "0.762 m high",
+        "note": "Standard wall cabinet. Omitted over the sink."
+      },
+      {
+        "label": "Upper cabinet underside",
+        "governing": "52 in AFF",
+        "metric": "1.321 m",
+        "note": "18 in above the 34 in work surface."
+      }
+    ]
+  },
+  "params": null,
+  "displayNames": {},
+  "parts": [
+    {
+      "type": "plate",
+      "id": "slab",
+      "name": "Unit slab",
+      "truth": "designer-default",
+      "layer": "structure",
+      "geometry": {
+        "polygon": [
+          [
+            -5.14985,
+            -3.556
+          ],
+          [
+            5.14985,
+            -3.556
+          ],
+          [
+            5.14985,
+            3.556
+          ],
+          [
+            -5.14985,
+            3.556
+          ]
+        ],
+        "thickness": 0.1524,
+        "y": 0
+      },
+      "note": "Study slab at the unit's measured overall extent."
+    },
+    {
+      "type": "wall",
+      "id": "wall-01",
+      "name": "Perimeter wall 1",
+      "truth": "designer-default",
+      "layer": "shell",
+      "geometry": {
+        "x": 0.0,
+        "z": -3.556,
+        "length": 10.2997,
+        "height": 2.7432,
+        "thickness": 0.1143,
+        "rotation": 0.0
+      }
+    },
+    {
+      "type": "wall",
+      "id": "wall-02",
+      "name": "Perimeter wall 2",
+      "truth": "designer-default",
+      "layer": "shell",
+      "geometry": {
+        "x": 5.1498,
+        "z": 0.0,
+        "length": 7.112,
+        "height": 2.7432,
+        "thickness": 0.1143,
+        "rotation": 90.0
+      }
+    },
+    {
+      "type": "wall",
+      "id": "wall-03",
+      "name": "Perimeter wall 3",
+      "truth": "designer-default",
+      "layer": "shell",
+      "geometry": {
+        "x": 0.0,
+        "z": 3.556,
+        "length": 10.2997,
+        "height": 2.7432,
+        "thickness": 0.1143,
+        "rotation": 180.0
+      }
+    },
+    {
+      "type": "wall",
+      "id": "wall-04",
+      "name": "Perimeter wall 4",
+      "truth": "designer-default",
+      "layer": "shell",
+      "geometry": {
+        "x": -5.1498,
+        "z": 0.0,
+        "length": 7.112,
+        "height": 2.7432,
+        "thickness": 0.1143,
+        "rotation": -90.0
+      }
+    },
+    {
+      "type": "zone",
+      "id": "zone-kitchen",
+      "name": "Kitchen",
+      "roomType": "kitchen",
+      "truth": "designer-default",
+      "layer": "zones",
+      "geometry": {
+        "x": -2.6352,
+        "z": -2.1844,
+        "width": 5.0292,
+        "depth": 2.7432,
+        "y": 0.0127
+      },
+      "note": "Room extents are a study arrangement. The set establishes that this room exists in this unit type and the unit's overall dimensions; it does not dimension the room within the unit."
+    },
+    {
+      "type": "zone",
+      "id": "zone-living",
+      "name": "Living / dining",
+      "roomType": "living",
+      "truth": "designer-default",
+      "layer": "zones",
+      "geometry": {
+        "x": -2.6352,
+        "z": 1.3716,
+        "width": 5.0292,
+        "depth": 4.3688,
+        "y": 0.0127
+      },
+      "note": "Room extents are a study arrangement. The set establishes that this room exists in this unit type and the unit's overall dimensions; it does not dimension the room within the unit."
+    },
+    {
+      "type": "zone",
+      "id": "zone-bedroom-01",
+      "name": "Bedroom",
+      "roomType": "bedroom",
+      "truth": "designer-default",
+      "layer": "zones",
+      "geometry": {
+        "x": 1.2129,
+        "z": -1.8034,
+        "width": 2.667,
+        "depth": 3.5052,
+        "y": 0.0127
+      },
+      "note": "Room extents are a study arrangement. The set establishes that this room exists in this unit type and the unit's overall dimensions; it does not dimension the room within the unit."
+    },
+    {
+      "type": "zone",
+      "id": "zone-bedroom-02",
+      "name": "Bedroom",
+      "roomType": "bedroom",
+      "truth": "designer-default",
+      "layer": "zones",
+      "geometry": {
+        "x": 3.8481,
+        "z": -1.8034,
+        "width": 2.6035,
+        "depth": 3.5052,
+        "y": 0.0127
+      },
+      "note": "Room extents are a study arrangement. The set establishes that this room exists in this unit type and the unit's overall dimensions; it does not dimension the room within the unit."
+    },
+    {
+      "type": "zone",
+      "id": "zone-bath",
+      "name": "Bath",
+      "roomType": "bath",
+      "truth": "designer-default",
+      "layer": "zones",
+      "geometry": {
+        "x": 1.2129,
+        "z": 1.7526,
+        "width": 2.667,
+        "depth": 3.6068,
+        "y": 0.0127
+      },
+      "note": "Room extents are a study arrangement. The set establishes that this room exists in this unit type and the unit's overall dimensions; it does not dimension the room within the unit."
+    },
+    {
+      "type": "zone",
+      "id": "zone-pantry",
+      "name": "Pantry",
+      "roomType": "pantry",
+      "truth": "designer-default",
+      "layer": "zones",
+      "geometry": {
+        "x": 3.8481,
+        "z": 1.7526,
+        "width": 2.6035,
+        "depth": 3.6068,
+        "y": 0.0127
+      },
+      "note": "Room extents are a study arrangement. The set establishes that this room exists in this unit type and the unit's overall dimensions; it does not dimension the room within the unit."
+    },
+    {
+      "type": "casework-run",
+      "id": "kitchen",
+      "name": "Kitchen L2.0 (Adaptable)",
+      "truth": "unresolved",
+      "anchor": {
+        "x": -2.4003,
+        "z": -3.19405
+      },
+      "params": {
+        "runLength": 3.3528,
+        "workSurfaceHeight": 0.8636
+      },
+      "counterDepth": 0.635,
+      "counterThickness": 0.0381,
+      "cabinetDepth": 0.6096,
+      "toeHeight": 0.1016,
+      "moduleTarget": 0.6096,
+      "upperHeight": 0.762,
+      "upperBottom": 1.3208,
+      "sink": {
+        "offset": -0.6096,
+        "width": 0.9144,
+        "bowlDepth": 0.1651,
+        "kneeDepth": 0.4826,
+        "toeDepth": 0.4318
+      },
+      "note": "The accepted anchor establishing this kitchen sits in the private record and is not published, so this assembly makes no source claim here. Its geometry was always a designer default; the sink clearances remain derived from published ADA and UFAS figures.",
+      "appliances": [
+        {
+          "slug": "refrigerator",
+          "name": "Refrigerator",
+          "truth": "designer-default",
+          "geometry": {
+            "width": 0.9144,
+            "height": 1.778,
+            "depth": 0.762,
+            "x": "run-end",
+            "dz": 0.0762
+          },
+          "note": "Standard 36 in \u00d7 30 in \u00d7 70 in placeholder. Anchored to the end of the run, so the relationship survives if the run is re-dimensioned."
+        },
+        {
+          "slug": "range",
+          "name": "Range",
+          "truth": "designer-default",
+          "geometry": {
+            "width": 0.6096,
+            "depth": 0.635,
+            "x": 0.762,
+            "dz": 0.0127
+          },
+          "note": "Standard 24 in apartment range occupying one base module. Height is taken from the work surface, so its top stays flush with the counter."
+        }
+      ]
+    },
+    {
+      "type": "fixture",
+      "id": "work-counter",
+      "name": "Accessible work counter",
+      "truth": "designer-default",
+      "material": "counter",
+      "geometry": {
+        "width": 1.8288,
+        "height": 0.8636,
+        "depth": 0.762,
+        "x": -3.6195,
+        "y": 0.4318,
+        "z": -1.27,
+        "rotation": 0
+      },
+      "derivations": [
+        "2010 ADA 606.3 \u00b7 804.3 \u2014 34 in max AFF",
+        "2010 ADA 804.2.1 \u2014 46 in aisle to the casework run, against a 40 in minimum"
+      ],
+      "note": "A 6'-0\" \u00d7 2'-6\" second work surface at the governing 34 in maximum. Its existence and position are designer defaults; its height and the aisle it leaves are code-derived."
+    },
+    {
+      "type": "fixture",
+      "id": "anchor-envelope",
+      "name": "Plan region outline",
+      "truth": "unresolved",
+      "material": "counter",
+      "geometry": {
+        "width": 3.6576,
+        "height": 0.012,
+        "depth": 1.2192,
+        "x": -2.4003,
+        "y": 0.012,
+        "z": -2.9464
+      },
+      "note": "The traced footprint of the plan region the kitchen was anchored to. With the evidence withheld it supports no claim a reader can check, so it is shown as unresolved rather than as verification. It is a review aid, not casework segmentation."
+    }
+  ],
+  "missing": [
+    "A publishable source link for the unit plan",
+    "Dimensioned room boundaries within the unit",
+    "Where this unit sits on any floor plate"
+  ]
+}

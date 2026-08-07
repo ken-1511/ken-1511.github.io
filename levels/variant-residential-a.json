@@ -1,0 +1,195 @@
+{
+  "schema": "parametric-study.floor-variant.v1",
+  "id": "variant-residential-a",
+  "name": "Residential A \u2014 typical plate",
+  "role": "residential",
+  "truth": "unresolved",
+  "evidence": {
+    "state": "unresolved",
+    "basis": "No floor plate is drawn in the available set. The plate depth is twice the unit depth that repeats on every unit sheet plus a code-minimum corridor; the length follows from the units laid along it. Nothing fixes the outline, the corridor, or the core."
+  },
+  "ceilingHeight": {
+    "value": 2.7432,
+    "unit": "m",
+    "truth": "derived",
+    "note": "Ceiling heights are stated for levels 1 and 2. Every other level takes the level 2 figure, which is a derivation, not a statement."
+  },
+  "plate": {
+    "polygon": [
+      [
+        0,
+        0
+      ],
+      [
+        57.912,
+        0
+      ],
+      [
+        57.912,
+        8.9408
+      ],
+      [
+        42.672,
+        8.9408
+      ],
+      [
+        42.672,
+        16.0528
+      ],
+      [
+        0,
+        16.0528
+      ]
+    ],
+    "thickness": 0.2032,
+    "truth": "unresolved",
+    "note": "No floor plate is drawn anywhere in the available set. This outline is a study arrangement built from the one dimension that does repeat across every unit sheet \u2014 the 23'-4\" unit depth \u2014 either side of a corridor."
+  },
+  "corridor": {
+    "id": "corridor",
+    "x0": 0,
+    "x1": 57.912,
+    "z0": 7.112,
+    "z1": 8.9408,
+    "truth": "unresolved",
+    "note": "The set names corridors but locates none. Width is a code minimum, not a measured figure."
+  },
+  "units": [
+    {
+      "type": "unit-d2",
+      "transform": {
+        "x": 7.4549,
+        "z": 3.556,
+        "rotation": 0
+      }
+    },
+    {
+      "type": "unit-b1",
+      "transform": {
+        "x": 20.3454,
+        "z": 3.556,
+        "rotation": 0
+      }
+    },
+    {
+      "type": "unit-s1",
+      "transform": {
+        "x": 33.8455,
+        "z": 3.556,
+        "rotation": 0
+      }
+    },
+    {
+      "type": "unit-s1",
+      "transform": {
+        "x": 38.3921,
+        "z": 3.556,
+        "rotation": 0
+      }
+    },
+    {
+      "type": "unit-d1",
+      "transform": {
+        "x": 48.1711,
+        "z": 3.556,
+        "rotation": 0
+      }
+    },
+    {
+      "type": "unit-d1-1",
+      "transform": {
+        "x": 7.4295,
+        "z": 12.4968,
+        "rotation": 0
+      }
+    },
+    {
+      "type": "unit-b2",
+      "transform": {
+        "x": 20.0088,
+        "z": 12.4968,
+        "rotation": 0
+      }
+    },
+    {
+      "type": "unit-s1",
+      "transform": {
+        "x": 27.432,
+        "z": 12.4968,
+        "rotation": 0
+      }
+    },
+    {
+      "type": "unit-s1",
+      "transform": {
+        "x": 31.9786,
+        "z": 12.4968,
+        "rotation": 0
+      }
+    }
+  ],
+  "common": [
+    {
+      "id": "lounge",
+      "roomType": "study",
+      "name": "Study lounge",
+      "x": 48.4632,
+      "z": 3.556,
+      "width": 5.4864,
+      "depth": 7.112,
+      "truth": "unresolved",
+      "note": "A shared room on a residential level is an assumption. The set does not schedule common area."
+    }
+  ],
+  "service": [
+    {
+      "id": "laundry",
+      "roomType": "laundry",
+      "name": "Laundry",
+      "x": 52.7304,
+      "z": 3.556,
+      "width": 3.048,
+      "depth": 7.112,
+      "truth": "unresolved",
+      "note": "Assumed. Not scheduled in the available set."
+    }
+  ],
+  "vertical": [
+    {
+      "id": "stair",
+      "roomType": "stair",
+      "name": "Stair",
+      "x": 9.6012,
+      "z": 3.556,
+      "width": 3.3528,
+      "depth": 7.112,
+      "truth": "unresolved",
+      "note": "The set names shafts, stairs and an elevator but locates none of them. This core is a study placement."
+    },
+    {
+      "id": "elevator",
+      "roomType": "elevator",
+      "name": "Elevator",
+      "x": 12.4968,
+      "z": 2.1336,
+      "width": 2.4384,
+      "depth": 4.2672,
+      "truth": "unresolved",
+      "note": "The set names shafts, stairs and an elevator but locates none of them. This core is a study placement."
+    },
+    {
+      "id": "shaft",
+      "roomType": "shaft",
+      "name": "Shaft",
+      "x": 12.4968,
+      "z": 5.6896,
+      "width": 2.4384,
+      "depth": 2.8448,
+      "truth": "unresolved",
+      "note": "The set names shafts, stairs and an elevator but locates none of them. This core is a study placement."
+    }
+  ],
+  "notes": [
+    "Assigned to three levels as a repeat. Only level 05 has a unit tagged on it in the available set; levels 03 and 06 have none at all, so repeating this plate there is an assumption and is marked as one."
+  ]
+}

@@ -1,45 +1,207 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>Ken Howard</title>
-<style>
-  :root { color-scheme: light dark; }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; min-height: 100dvh;
-    display: grid; place-items: center; padding: 24px;
-    font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-    background: #f4f2ec; color: #1d2630;
-  }
-  main { max-width: 30rem; }
-  .mark {
-    width: 40px; height: 40px; display: grid; place-items: center;
-    background: #121a23; color: #c96442; font-weight: 800; margin-bottom: 22px;
-  }
-  p.eyebrow {
-    font-size: 10px; letter-spacing: .16em; font-weight: 800;
-    text-transform: uppercase; color: #6d7a86; margin: 0 0 8px;
-  }
-  h1 { font-size: 1.4rem; margin: 0 0 14px; font-weight: 700; }
-  p { margin: 0 0 12px; }
-  small { color: #6d7a86; font-size: 13px; }
-  @media (prefers-color-scheme: dark) {
-    body { background: #121a23; color: #e8e6e0; }
-    .mark { background: #e8e6e0; color: #c96442; }
-    p.eyebrow, small { color: #94a1ad; }
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#121a23">
+  <meta name="robots" content="index,follow">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23111922'/%3E%3Cpath d='M8 6h16v4H18v12h6v4H8v-4h6V10H8z' fill='%23c96442'/%3E%3C/svg%3E">
+  <title>Multifamily Student Housing — Parametric Reconstruction Study</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main>
-    <div class="mark" aria-hidden="true">I</div>
-    <p class="eyebrow">Rebuilding</p>
-    <h1>This site is being rebuilt.</h1>
-    <p>The parametric plan study that was here has been withdrawn while its source-evidence handling is reworked.</p>
-    <p><small>Ken Howard</small></p>
+  <script>
+    /* Restore the stored chrome state before the rest of the body parses, so an
+       opted-in reload does not flash full bleed first. An absent key stays full
+       bleed and costs no JS at all. */
+    try { if (localStorage.getItem('msh.devChrome') === 'on') document.body.classList.add('chrome-on'); } catch (e) { /* storage blocked */ }
+  </script>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand-block">
+        <span class="brand-mark" aria-hidden="true">I</span>
+        <div>
+          <p class="eyebrow">PARAMETRIC PLAN STUDY · THREE.JS</p>
+          <h1>Multifamily Student Housing</h1>
+        </div>
+      </div>
+      <div class="mode-switch" role="group" aria-label="View mode">
+        <button class="mode-button active" data-mode="model" aria-pressed="true">3D Study</button>
+        <button class="mode-button" data-mode="plan" aria-pressed="false">Plan</button>
+        <button class="mode-button" data-mode="section" aria-pressed="false">Section</button>
+      </div>
+      <button id="evidenceToggle" class="outline-button" disabled
+              title="No source evidence is published in this build. The plan evidence carries client drawing identity and is withheld.">No source evidence</button>
+    </header>
+
+    <div id="coherenceWarning" class="coherence-warning" role="alert" hidden></div>
+
+    <section class="truth-banner" aria-label="Truth boundary">
+      <strong>Parametric reconstruction study, not an as-built model.</strong>
+      <span>No source evidence is published in this build, so no scope claims verification. Unit types are measured from a withheld set; <b>every floor plate, corridor, core and unit position is an unresolved study arrangement</b> — nothing available establishes them.</span>
+    </section>
+
+    <div class="workspace" id="workspace">
+      <aside class="navigator" aria-label="Study navigation">
+        <p class="rail-label">ROOMS</p>
+        <nav id="roomList" class="room-list" aria-label="Rooms on this level"></nav>
+
+        <div class="rail-rule"></div>
+        <p class="rail-label">MODEL TREE</p>
+        <div id="modelTree" class="model-tree" role="tree" aria-label="Components in this room"></div>
+
+        <div class="rail-rule"></div>
+        <p class="rail-label">DISPLAY</p>
+        <label class="toggle-row"><span>Truth overlay</span><input id="truthToggle" type="checkbox"><i></i></label>
+        <label class="toggle-row"><span>Grid</span><input id="gridToggle" type="checkbox" checked><i></i></label>
+
+        <p class="rail-sublabel">LAYERS</p>
+        <div id="layerToggles" class="toggle-set"></div>
+
+        <p class="rail-sublabel">SHELL</p>
+        <div id="shellModes" class="segmented" role="group" aria-label="Shell treatment">
+          <button type="button" data-shell="solid" aria-pressed="false">Solid</button>
+          <button type="button" data-shell="transparent" class="active" aria-pressed="true">Ghost</button>
+          <button type="button" data-shell="cutaway" aria-pressed="false">Cutaway</button>
+          <button type="button" data-shell="hidden" aria-pressed="false">Off</button>
+        </div>
+        <p id="shellNote" class="rail-note">Walls sit back so the interior reads. Cutaway drops whichever walls you are outside of.</p>
+
+        <p class="rail-sublabel">SECTION PLANE</p>
+        <label class="toggle-row"><span>Clip the model</span><input id="clipToggle" type="checkbox"><i></i></label>
+        <div id="clipControls" class="control-row" hidden>
+          <select id="clipAxis" aria-label="Clip axis">
+            <option value="y" selected>Horizontal cut</option>
+            <option value="z">Front to back</option>
+            <option value="x">Side to side</option>
+          </select>
+          <input id="clipT" type="range" min="0" max="1" step="0.005" value="0.55" aria-label="Clip position">
+          <button type="button" id="clipFlip" class="mini-button" aria-pressed="false">Flip</button>
+        </div>
+
+        <p class="rail-sublabel">LEVELS</p>
+        <div class="control-row">
+          <label for="explodeRange">Explode</label>
+          <input id="explodeRange" type="range" min="0" max="8" step="0.25" value="0">
+          <output id="explodeReadout" for="explodeRange">0.00 m</output>
+        </div>
+        <label class="toggle-row"><span>Full detail, all levels</span><input id="detailToggle" type="checkbox"><i></i></label>
+        <p id="detailNote" class="rail-note"></p>
+        <div id="levelToggles" class="toggle-set"></div>
+      </aside>
+
+      <section class="stage" aria-label="Interactive Three.js model">
+        <canvas id="threeCanvas" tabindex="0" aria-label="Interactive parametric reconstruction of a Multifamily Student Housing unit room"></canvas>
+        <div class="stage-topline">
+          <span id="viewLabel">AXONOMETRIC STUDY</span>
+          <span id="rendererState">INITIALIZING WEBGL</span>
+        </div>
+        <div id="objectTooltip" class="object-tooltip" hidden></div>
+        <div class="camera-help">
+          <span><b>Drag</b> orbit</span><span><b>Shift + drag</b> pan</span><span><b>Wheel</b> zoom</span>
+        </div>
+        <button id="resetCamera" class="reset-button" aria-label="Reset camera">Reset view</button>
+        <button id="chromeToggle" class="chrome-hint" aria-expanded="false" aria-controls="workspace" title="Show the study panels (E)">
+          <kbd>E</kbd><span id="chromeToggleLabel">dev overlays</span>
+        </button>
+        <div class="scale-bar"><span></span><small>1 m study scale</small></div>
+        <div id="loadingState" class="loading-state"><span></span>Building parametric scene</div>
+        <div id="routeError" class="route-error" hidden role="alert">
+          <p class="eyebrow">ROUTE DID NOT RESOLVE</p>
+          <h2 id="routeErrorTitle">Unknown address</h2>
+          <p id="routeErrorDetail"></p>
+          <button id="routeErrorHome" class="outline-button dark">Open the default room</button>
+        </div>
+      </section>
+
+      <aside class="inspector" aria-live="polite">
+        <div class="inspector-heading">
+          <div>
+            <p class="eyebrow" id="selectedKind">SELECTED SCOPE</p>
+            <h2 id="selectedName">—</h2>
+          </div>
+          <span id="truthBadge" class="truth-badge">—</span>
+        </div>
+        <p id="truthClaim" class="truth-claim"></p>
+        <p id="containsRollup" class="contains-rollup" hidden></p>
+
+        <dl class="metadata-grid">
+          <div><dt>Source</dt><dd id="sourceRef">—</dd></div>
+          <div><dt>Sheet</dt><dd id="sheetRef">—</dd></div>
+          <div><dt>View</dt><dd id="viewType">—</dd></div>
+          <div><dt>Status</dt><dd id="reviewState">—</dd></div>
+        </dl>
+
+
+        <div id="noEvidenceCard" class="no-evidence-card" hidden>
+          <strong>No source link</strong>
+          <p id="noEvidenceDetail">This scope has no accepted anchor. There is nothing to open.</p>
+          <ul id="missingList" class="missing-list"></ul>
+        </div>
+
+        <section id="derivationSection" class="derivation-section" hidden>
+          <div class="section-title"><h3>Stated relationships</h3><span>DERIVED</span></div>
+          <ul id="derivationList" class="derivation-list"></ul>
+        </section>
+
+        <p id="componentNote" class="component-note" hidden></p>
+
+        <section id="dimensionSection" class="parameter-section">
+          <div class="section-title"><h3>Fixed dimensions</h3><span>PINNED</span></div>
+          <dl id="dimensionList" class="dimension-list"></dl>
+          <p id="noDimensions" class="parameter-note" hidden></p>
+          <p id="dimensionNote" class="parameter-note" hidden></p>
+        </section>
+
+        <section id="adaSection" class="ada-section" hidden>
+          <div class="section-title"><h3>Accessibility check</h3><span id="adaVerdict">—</span></div>
+          <p id="adaTightest" class="ada-tightest" hidden></p>
+          <dl id="adaReadout" class="ada-readout"></dl>
+        </section>
+
+        <section id="compositionSection" class="composition-section" hidden>
+          <div class="section-title">
+            <h3>Floor composition</h3>
+            <span id="compositionRepeat" class="composition-tag"></span>
+          </div>
+          <p class="composition-head">
+            <b id="compositionLevel">—</b>
+            <span id="compositionRole" class="composition-role"></span>
+            <span id="compositionVariant" class="composition-variant"></span>
+          </p>
+          <dl id="compositionFacts" class="composition-facts"></dl>
+          <ul id="compositionMix" class="composition-mix"></ul>
+          <ul id="compositionNotes" class="composition-notes"></ul>
+        </section>
+
+        <section class="truth-list">
+          <div class="section-title"><h3>Evidence states</h3><span></span></div>
+          <div id="truthLegend"></div>
+          <div class="legend-extra">
+            <p><i class="legend-swatch is-detail"></i><span><b>Built detail</b> — this level is loaded. Components are addressable and selectable.</span></p>
+            <p><i class="legend-swatch is-massing"></i><span><b>Massing</b> — the level's own plate outline, extruded. Not components, not counted. Click to build.</span></p>
+            <p><i class="legend-swatch is-unresolved"></i><span><b>Unresolved</b> — shown as a gap rather than a guess. Every plate outline and unit position in this study is unresolved.</span></p>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <footer class="statusbar">
+      <span id="selectionPath" class="selection-path">—</span>
+      <span><i class="status-dot"></i><b id="objectCount">0</b> components<span id="scopeCount" class="scope-count"></span> · <b id="guideCount">0</b> guides · <span id="detailStat">—</span> · <span id="frameStat">—</span> · seed MSH-B2-01</span>
+    </footer>
   </main>
+
+
+  <div id="webglFallback" class="fallback" hidden>
+    <h2>Interactive 3D is unavailable</h2>
+    <p>This browser did not initialize WebGL, so the parametric study cannot be drawn.</p>
+    <p class="fallback-note">No source evidence is published in this build, so there is no drawing to fall back to.</p>
+  </div>
+  <div id="srStatus" class="sr-only" aria-live="polite"></div>
+  <script type="importmap">
+    {"imports":{"three":"./vendor/three/three.module.js","three/addons/":"./vendor/three/addons/"}}
+  </script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>

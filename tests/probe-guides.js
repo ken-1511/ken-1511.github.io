@@ -1,0 +1,16 @@
+const v = window.__study.viewer;
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const R = { guidesOn: { calls: v.renderInfo.calls, guideCount: v.guideCount } };
+v.setLayerVisible('guides', false);
+await sleep(400);
+R.guidesOff = { calls: v.renderInfo.calls, guideCount: v.guideCount };
+v.setLayerVisible('guides', true);
+await sleep(400);
+R.guidesBackOn = { calls: v.renderInfo.calls };
+v.setLayerVisible('casework', false);
+await sleep(400);
+R.caseworkOff = { calls: v.renderInfo.calls };
+v.setLayerVisible('casework', true);
+await sleep(400);
+R.restored = { calls: v.renderInfo.calls, objects: v.objectCount, indexed: v.index.size };
+return R;

@@ -1,0 +1,136 @@
+{
+  "schema": "parametric-study.viewer.v2",
+  "status": "PUBLIC_PROTOTYPE_NOT_AS_BUILT",
+  "container": "parametric reconstruction study",
+  "study": {
+    "project": "Multifamily Student Housing",
+    "scope": "Unit Type B2 — Kitchen L2.0 (Adaptable)",
+    "seed": "MSH-B2-01",
+    "source_state": "withheld — no source evidence is published in this build"
+  },
+  "de_identification": {
+    "policy": "The public build publishes no evidence raster and no drawing-set numbering. Descriptive labels only.",
+    "raster": "removed from the deployable tree. The unredacted page carried client drawing identity and was withdrawn from the live site.",
+    "mapping_location": "PROVENANCE.md and the brief files — git-ignored, never published.",
+    "effect": "With no published source, nothing can claim source-verified, and nothing does."
+  },
+  "truth_contract": {
+    "states": [
+      "source-verified — traced to accepted plan evidence, with a source link",
+      "derived — computed from a verified parent by a stated relationship",
+      "designer-default — reversible placeholder, carries no claim",
+      "unresolved — building information we do not have"
+    ],
+    "rollup_rule": "A scope containing more than one state reports 'mixed'. Roll-up never promotes to the strongest member.",
+    "enforcement": "validateClaim() throws at load time if anything claims source-verified without a source link.",
+    "observed_evidence": [
+      "None published. Evidence exists in the private record but is withheld, so this build asserts no observations."
+    ],
+    "designer_defaults": [
+      "Room envelope",
+      "Current casework dimensions",
+      "Cabinet subdivisions",
+      "Appliance geometry",
+      "Materials and finishes",
+      "Partition geometry"
+    ],
+    "derived": [
+      "Accessibility clearance envelopes and the dimensions behind them",
+      "Work surface height against the governing maximum",
+      "Appliance attachment to the end of the parametric run"
+    ],
+    "unresolved": [
+      "All three rooms — no published source link exists for any of them",
+      "Floor elevations, overall plans, sections, elevations and grids",
+      "Room-to-unit placement"
+    ],
+    "disclosure": "The evidence page for the kitchen scope is withheld from publication. An unshown source is not a source, so the kitchen reads unresolved alongside the other two rooms. The 3D geometry is a review aid, not production segmentation or as-built geometry."
+  },
+  "accessibility": {
+    "standards": [
+      "2010 ADA Standards for Accessible Design — knee/toe clearance, work surface height, faucets, exposed pipes, clear floor space",
+      "UFAS 4.34.6.5 — kitchen sinks in accessible dwelling units: bowl depth and knee space"
+    ],
+    "citation_correction": "An earlier revision cited '2010 ADA 606.6' for the 6.5 in bowl depth. Section 606 ends at 606.5 and the 2010 ADA Standards contain no sink-depth requirement at all. The governing figure is UFAS 4.34.6.5. Verified against access-board.gov.",
+    "height_datum": "workSurfaceHeight is the FINISHED TOP SURFACE — the plane 606.3 measures ('rim or counter, whichever is higher'). The counter slab sits inside that figure. An earlier revision treated it as the cabinet carcass and stacked a 55 mm slab on top, putting the governed surface at 36.17 in while the readout claimed 34.0 in.",
+    "governing_figures_in": {
+      "work_surface_max_height": 34,
+      "sink_bowl_max_depth": 6.5,
+      "knee_clear_height": 27,
+      "knee_depth_kitchen_sink": 19,
+      "knee_min_width": 30,
+      "knee_max_extension": 25,
+      "toe_height": 9,
+      "toe_min_depth": 17,
+      "clear_floor": [
+        30,
+        48
+      ],
+      "clear_floor_max_under_sink": 19,
+      "kitchen_aisle_min": 40
+    },
+    "as_built_margins_in": {
+      "work_surface_height": 0.0,
+      "sink_bowl_depth": 0.0,
+      "knee_clearance_under_bowl": 0.5,
+      "knee_clearance_width": 6.0,
+      "knee_clearance_depth": 0.0,
+      "toe_clearance_depth": 0.0,
+      "aisle_to_opposing_counter": 6.68
+    },
+    "margin_policy": "Every clearance reports a signed margin in inches, not a pass/fail. Margins under 1 in are flagged: at these breakpoints a pass with zero slack is a shop-drawing risk, and the 34 in surface over a 6.5 in bowl leaves exactly 0.5 in of knee clearance by design.",
+    "corrections_applied": [
+      "Work surface default moved from 0.91 m (35.8 in) to a finished 34 in",
+      "Continuous base-cabinet run under the sink replaced with a knee-clearance void",
+      "Height datum corrected from cabinet carcass to finished top surface",
+      "Bowl-depth citation corrected from a nonexistent ADA 606.6 to UFAS 4.34.6.5",
+      "Knee depth raised from ADA 306.3's 11 in floor to the UFAS kitchen figure of 19 in",
+      "Toe depth corrected from 6 in (a maximum-protrusion reading) to the 17 in minimum",
+      "Compliance readout now measures the built geometry instead of the input parameter"
+    ],
+    "note": "Accessibility figures are derived from published ADA and UFAS sections, which are checkable without any project drawing. They are unaffected by the evidence withdrawal."
+  },
+  "runtime": {
+    "renderer": "Three.js WebGL",
+    "three_version": "0.179.1",
+    "modes": [
+      "axonometric study",
+      "orthographic plan",
+      "front section study"
+    ],
+    "routing": "hash routes over component addresses; #/building-a/floor-02 is the whole unit, #/building-a/floor-02/room-204 focuses a room within it",
+    "interactions": [
+      "orbit",
+      "pan",
+      "zoom",
+      "object selection",
+      "unit and room focus",
+      "truth overlay",
+      "layer visibility",
+      "source evidence dialog"
+    ],
+    "parametric": "Dimension sliders removed this pass. Dimensions are pinned to standard, mutually compatible figures; the RoomViewer keeps its setParam API for when they return as viewing adjustments."
+  },
+  "implementation": {
+    "order_reference": "BRIEF.md steps 1-9",
+    "complete": [
+      "1 — room refactored into a reusable RoomViewer",
+      "2 — room manifest and hash route system",
+      "3 — three representative room scopes",
+      "4 — rooms composed into one unit from the floor registry (pulled forward)"
+    ],
+    "pending": [
+      "5 — floor layers and room selection",
+      "6 — floor stacking",
+      "7 — shell, cutaway, clipping, exploded modes",
+      "8 — progressive loading",
+      "9 — full verification pass"
+    ]
+  },
+  "publication": "Public deployment pending. Ken reviews and deploys; this tree ships no raster.",
+  "composition": {
+    "mode": "whole unit composed from floors/floor-02.json placements",
+    "placement_truth": "unresolved",
+    "note": "Room-to-room placement has no accepted anchor. The layout is a working arrangement and the interface says so on the unit scope."
+  }
+}

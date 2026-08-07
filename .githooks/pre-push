@@ -1,0 +1,35 @@
+#!/bin/sh
+# Publication gate. See PUBLICATION-CONTRACT.md.
+# Install once:  git config core.hooksPath .githooks
+#
+# stdin: <local ref> <local sha> <remote ref> <remote sha>
+
+remote_name="$1"
+status=0
+z40=0000000000000000000000000000000000000000
+
+while read -r local_ref local_sha remote_ref remote_sha; do
+  [ "$local_sha" = "$z40" ] && continue          # deleting a ref
+
+  if [ "$remote_sha" = "$z40" ]; then
+    # New branch on the remote: everything reachable that the remote lacks.
+    # Expressed as an exclusion rather than a range — a new branch has no
+    # remote_sha to anchor to, and the root commit has no parent to name.
+    range="$local_sha --not --remotes=$remote_name"
+  else
+    range="${remote_sha}..${local_sha}"
+  fi
+
+  echo "  gate: $local_ref -> $remote_ref  ($range)"
+  python3 "$(git rev-parse --show-toplevel)/tools/check_publishable.py" \
+      --range "$range" --remote "$remote_name" || status=1
+done
+
+if [ "$status" -ne 0 ]; then
+  echo ""
+  echo "  push blocked by the publication contract."
+  echo "  A denial is a finding, not an obstacle. Fix the content, not the gate."
+  echo ""
+fi
+
+exit "$status"

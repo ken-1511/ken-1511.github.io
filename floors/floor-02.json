@@ -1,0 +1,132 @@
+{
+  "schema": "parametric-study.floor-registry.v1",
+  "id": "building-a.floor-02",
+  "name": "Level 02",
+  "project": "Multifamily Student Housing",
+  "building": "building-a",
+  "container": "parametric reconstruction study",
+  "_comment": "The hand-authored single-floor registry. It is no longer the composition the viewer loads — rooms/manifest.json points at building.json, and levels are expanded from a unit type by src/types.js — but it is still a valid composition and the fallback path in app.js still reads it. Placements remain unresolved: no accepted anchor fixes where these rooms sit relative to one another. The layout below is a working arrangement chosen so the unit reads as a unit, and the interface says so wherever it is shown.",
+  "_superseded_by": "building.json",
+  "elevation": {
+    "value": null,
+    "unit": "m",
+    "truth": "unresolved",
+    "note": "Floor-to-floor elevations are not verified. Until they are, floors cannot be stacked at a real height and the container stays labelled a parametric reconstruction study."
+  },
+  "slab": {
+    "id": "building-a.floor-02.slab",
+    "truth": "unresolved",
+    "geometry": null,
+    "note": "No verified overall plan, so no floor-wide slab extent."
+  },
+  "grid": {
+    "id": "building-a.floor-02.grid",
+    "truth": "unresolved",
+    "lines": [],
+    "note": "No accepted column or structural grid."
+  },
+  "rooms": [
+    {
+      "id": "building-a.floor-02.room-204",
+      "ref": "rooms/room-204.json",
+      "placement": {
+        "x": 0,
+        "z": 0,
+        "rotation": 0
+      },
+      "placementTruth": "unresolved",
+      "placementNote": "Working layout, taken as the unit origin. The kitchen's plan region is anchored; its position within the unit is not."
+    },
+    {
+      "id": "building-a.floor-02.room-205",
+      "ref": "rooms/room-205.json",
+      "placement": {
+        "x": -1.2192,
+        "z": 3.5052,
+        "rotation": 0
+      },
+      "placementTruth": "unresolved",
+      "placementNote": "Working layout. Neither the room boundary nor its position in the unit is anchored."
+    },
+    {
+      "id": "building-a.floor-02.room-206",
+      "ref": "rooms/room-206.json",
+      "placement": {
+        "x": 1.524,
+        "z": 3.5052,
+        "rotation": 0
+      },
+      "placementTruth": "unresolved",
+      "placementNote": "Working layout. Neither the room boundary nor its position in the unit is anchored."
+    }
+  ],
+  "layers": [
+    {
+      "name": "structure",
+      "label": "Slabs",
+      "default": true
+    },
+    {
+      "name": "shell",
+      "label": "Walls and openings",
+      "default": true
+    },
+    {
+      "name": "casework",
+      "label": "Casework",
+      "default": true
+    },
+    {
+      "name": "fixtures",
+      "label": "Fixtures and appliances",
+      "default": true
+    },
+    {
+      "name": "volumes",
+      "label": "Unresolved volumes",
+      "default": true
+    },
+    {
+      "name": "guides",
+      "label": "Clearance envelopes",
+      "default": true
+    }
+  ],
+  "_layers_note": "Labels live in rooms/manifest.json now, so the rail has them whichever composition is loaded. The set of layers a build actually contains is discovered from its part specs rather than declared here.",
+  "viewModes": {
+    "cameras": [
+      "model",
+      "plan",
+      "section"
+    ],
+    "shell": [
+      "solid",
+      "transparent",
+      "cutaway",
+      "hidden"
+    ],
+    "implemented": [
+      "clipped",
+      "exploded-floors"
+    ],
+    "planned": [],
+    "note": "Camera mode and shell treatment are independent: the shell treatment applies in each of the three cameras, except cutaway, which means nothing in a plan because a plan is already a cut. The section plane and the exploded stack are display states over the same geometry — none of them creates, destroys, or re-parents anything, and the object count is identical with each of them on and off."
+  },
+  "loading": {
+    "strategy": "selected-floor-full-detail",
+    "implemented": true,
+    "note": "A level outside the detail set never has its parts generated: it contributes one massing block per unit and nothing else. Focusing a scope on an unloaded level builds it and lets the level it replaced fall back to massing. Massing blocks are not components — no addresses, not indexed, not in the object count — and are reported separately.",
+    "override": "A full-detail switch builds every level at once. It exists so the cost and the saving can be compared rather than asserted."
+  },
+  "unit": "Unit Type B2",
+  "displayName": "Unit B2 — Level 02",
+  "composition": {
+    "placementTruth": "unresolved",
+    "note": "Room-to-room placement has no accepted anchor. The arrangement is a working layout, not an evidenced plan. Rooms 205 and 206 are unresolved volumes, so both their extents and their positions carry no claim.",
+    "overall": {
+      "governing": "18'-0\" x 23'-0\"",
+      "metric": "5.486 x 7.010 m",
+      "truth": "designer-default"
+    }
+  }
+}

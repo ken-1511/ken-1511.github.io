@@ -1249,7 +1249,9 @@ function wireDisplayControls() {
       : 'Levels stacked at their modelled elevations.';
   });
 
-  $('#detailToggle').addEventListener('change', event => {
+  const detailToggle = $('#detailToggle');
+  detailToggle.checked = viewer.detailMode === 'all';
+  detailToggle.addEventListener('change', event => {
     viewer.setDetailMode(event.target.checked ? 'all' : 'focused');
     srStatus.textContent = event.target.checked
       ? `All levels built: ${viewer.objectCount} components.`

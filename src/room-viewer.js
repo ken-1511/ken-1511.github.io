@@ -110,7 +110,9 @@ export class RoomViewer {
   #explodeGap = 0;
   #clip = { enabled: false, axis: 'y', t: 0.55, flip: false };
   #clipPlane = new THREE.Plane();
-  #detailMode = 'focused';
+  // Start with the complete building visible. Focused/progressive detail remains
+  // available as an explicit performance option in the display controls.
+  #detailMode = 'all';
   #detailFloors = new Set();
   #lastDetailFloor = null;
   #cameraKey = '';
@@ -1469,7 +1471,10 @@ export class RoomViewer {
       const fovV = (this.#perspective.fov * Math.PI) / 180;
       const fovH = 2 * Math.atan(Math.tan(fovV / 2) * aspect);
       const radius = size.length() / 2 || 1;
-      const distance = (radius / Math.sin(Math.min(fovV, fovH) / 2)) * 0.78;
+      // Fit the entire bounding sphere with a small margin. A multiplier below
+      // one crops the long footprint on portrait phones, so the default whole-
+      // building route must stay at or beyond the mathematically complete fit.
+      const distance = (radius / Math.sin(Math.min(fovV, fovH) / 2)) * 1.05;
       const direction = new THREE.Vector3(0.62, 0.74, 0.66).normalize();
       this.#perspective.position.copy(center).addScaledVector(direction, distance);
       this.#perspective.updateProjectionMatrix();
@@ -1494,7 +1499,9 @@ export class RoomViewer {
     controls.dampingFactor = 0.075;
     controls.screenSpacePanning = true;
     controls.minDistance = 1.5;
-    controls.maxDistance = 140;
+    // Whole-building framing on portrait phones can need substantially more
+    // distance than a desktop canvas. Keep the orbit limit beyond that fit.
+    controls.maxDistance = 400;
     if (this.#mode === 'model') controls.maxPolarAngle = Math.PI * 0.495;
     controls.update();
     return controls;

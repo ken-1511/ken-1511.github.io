@@ -3,7 +3,7 @@
   "project": "Multifamily Student Housing",
   "container": "parametric reconstruction study",
   "building": "building.json",
-  "default": "building-a.floor-04",
+  "default": "building-a",
   "displayNames": {
     "building-a": "Building A",
     "building-a.floor-01": "Level 01",

@@ -34,9 +34,17 @@ const levelOf = id => building.floors.find(f => f.id === id);
 
 check('every level is a scope in the viewer', FLOORS.length === 7, FLOORS.length + ' levels');
 
-check('one level is built on load', viewer.detailFloors.length === 1, viewer.detailFloors.join());
-check('the other six are massing', viewer.proxyCount === 6, `${viewer.proxyCount} blocks`);
+check('every level is built on load',
+      viewer.detailFloors.length === FLOORS.length && viewer.proxyCount === 0,
+      `${viewer.detailFloors.length} levels, ${viewer.objectCount} components`);
+check('the default build contains addresses from every level',
+      FLOORS.every(id => [...viewer.index.keys()].some(entryId => floorIdOf(entryId) === id)),
+      `${viewer.index.size} indexed across ${FLOORS.length} levels`);
 
+// Progressive loading remains available as an explicit performance option.
+viewer.setDetailMode('focused');
+check('focused mode builds one level', viewer.detailFloors.length === 1, viewer.detailFloors.join());
+check('the other six become massing', viewer.proxyCount === 6, `${viewer.proxyCount} blocks`);
 check('a level that is not loaded generates no parts',
       [...viewer.index.keys()].every(id => floorIdOf(id) === viewer.detailFloors[0]),
       `${viewer.index.size} indexed, all on ${viewer.detailFloors[0]}`);
